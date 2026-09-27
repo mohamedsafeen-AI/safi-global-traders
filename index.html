@@ -482,8 +482,10 @@
         .home-hero-inner { margin: 0 auto; max-width: 960px; }
         .hero-brand {
             font-family: var(--font-head); font-weight: 800; text-transform: uppercase;
-            color: var(--white); font-size: clamp(34px, 6.2vw, 78px); line-height: 1.06;
-            letter-spacing: .05em; word-spacing: .18em;
+            color: var(--white); font-size: clamp(28px, 8.4vw, 78px); line-height: 1.08;
+            letter-spacing: .04em; word-spacing: .12em;
+            max-width: 100%; overflow-wrap: anywhere; word-break: break-word;
+            hyphens: none; text-wrap: balance;
         }
         .hero-brand .gold { color: var(--gold-light); }
         .hero-sub {
@@ -562,6 +564,26 @@
             .trust-media img { height: 280px; }
         }
 
+        /* ============ HOME HERO: MOBILE FIX (last block = wins) ============ */
+        @media (max-width: 992px) {
+            .page-hero.has-home-hero { min-height: auto; padding: 150px 0 90px; }
+            .home-hero-inner { max-width: 100%; }
+            .hero-brand { font-size: clamp(30px, 9vw, 56px); letter-spacing: .03em; word-spacing: .08em; }
+            .hero-sub { font-size: clamp(17px, 4.4vw, 22px); letter-spacing: .04em; line-height: 1.5; }
+            .hero-desc { margin-left: auto; margin-right: auto; }
+            .home-hero-buttons { margin-top: 30px; }
+        }
+        @media (max-width: 480px) {
+            .page-hero.has-home-hero { padding: 128px 0 68px; }
+            .hero-brand { font-size: clamp(24px, 8.6vw, 42px); line-height: 1.14; letter-spacing: .02em; word-spacing: .04em; }
+            .hero-sub { margin-top: 10px; font-size: 16px; }
+            .hero-desc { font-size: 14.5px; line-height: 1.7; }
+            .hero-tagline { font-size: 14px; letter-spacing: .14em; }
+            .home-hero-buttons { margin-top: 26px; }
+            .home-hero-buttons .btn { width: 100%; max-width: 300px; margin: 0 auto; justify-content: center; }
+            .scroll-hint { display: none; }
+        }
+
     </style>
 </head>
 <body>
@@ -605,7 +627,7 @@
             <div class="page-hero has-home-hero home-hero" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80');">
                 <div class="container">
                     <div class="hero-inner home-hero-inner">
-                        <h1 class="hero-brand">SAFI<span class="gold">GLOBAL</span>TRADERS</h1>
+                        <h1 class="hero-brand">SAFI<wbr><span class="gold">GLOBAL</span><wbr>TRADERS</h1>
                         <p class="hero-sub">Building Connections Between Indian Agriculture and Global Markets</p>
                         <p class="hero-desc">SAFI Global Traders is a growing agricultural import-export startup focused on sourcing quality Indian agricultural products and connecting them with international buyers. We are building our business on quality, reliability, transparency, and long-term relationships.</p>
                         <div class="hero-buttons home-hero-buttons">
